@@ -1,31 +1,31 @@
 package org.example.warehouseapp.model;
 
 import jakarta.persistence.*;
+import jdk.jfr.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User {
+public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private String firstname;
-    @Column(nullable = false)
-    private String lastname;
-    @Column(nullable = false, unique = true)
-    private String phoneNumber;
+    private String name;
+    @ManyToMany
+    private List<Category> category;
+    @OneToOne
+    private Attachment attachment;
     @Column(nullable = false)
     private String code;
-    @Column(nullable = false)
-    private String password;
-    @Column(nullable = false)
+    @OneToOne
+    private Measurement measurement;
     private boolean active;
-
-
-
 }

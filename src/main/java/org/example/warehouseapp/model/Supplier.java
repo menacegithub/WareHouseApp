@@ -9,23 +9,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User {
+
+public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private String firstname;
-    @Column(nullable = false)
-    private String lastname;
-    @Column(nullable = false, unique = true)
-    private String phoneNumber;
-    @Column(nullable = false)
-    private String code;
-    @Column(nullable = false)
-    private String password;
+    private String name;
     @Column(nullable = false)
     private boolean active;
-
-
-
+    @Column(nullable = false)
+    private String phoneNumber;
 }

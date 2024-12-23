@@ -17,5 +17,9 @@ public class CategoryController {
     public List<Category> getAllCategories() {
      return categoryService.categoriesAll();
     }
+    public Category getCategoryById(Integer id) {
+        return categoryService.categoryById(id);
+    }
+
 
 }
